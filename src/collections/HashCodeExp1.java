@@ -13,21 +13,33 @@ public class HashCodeExp1 {
 		map.put(st1, 7.5);
 		map.put(st2, 8.7);
 		map.put(st3, 9.1);
-
 		System.out.println(map);
-		Student3 st4 = new Student3("Sergey", "Tregulov", 4);
+//		System.out.println(map.containsKey(st1));
+//		System.out.println(st1.hashCode());
+//		st1.course = 4;
+//		System.out.println(map.containsKey(st1));
+//		System.out.println(st1.hashCode());
+
+//		System.out.println(map);
+//		Student3 st4 = new Student3("Sergey", "Tregulov", 4);
 //		boolean result = map.containsKey(st4);
 //		System.out.println("result = " + result);
 //		System.out.println(st3.equals(st4));
-		System.out.println(st3.hashCode());
-		System.out.println(st4.hashCode());
+//		System.out.println(st3.hashCode());
+//		System.out.println(st4.hashCode());
+
+//		for (Map.Entry<Student3, Double> entry : map.entrySet()) {
+//			System.out.println(entry.getKey() + " : " + entry.getValue());
+//		}
+//
+//		Map<Integer, String> map2 = new HashMap<>(16, 0.75f); // 16 * 0.75 = 12 elem
 	}
 }
 
-class Student3 {
-	String name;
-	String surname;
-	int course;
+final class  Student3 {
+	final String name;
+	final String surname;
+	final int course;
 
 	public Student3(String name, String surname, int course) {
 		this.name = name;

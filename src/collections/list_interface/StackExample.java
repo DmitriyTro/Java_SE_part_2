@@ -1,4 +1,4 @@
-package collections;
+package collections.list_interface;
 
 public class StackExample {
 	static void abc1() {

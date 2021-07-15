@@ -1,4 +1,4 @@
-package collections;
+package collections.map_interface;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,10 +6,10 @@ import java.util.Objects;
 
 public class HashCodeExp1 {
 	public static void main(String[] args) {
-		Map<Student3, Double> map = new HashMap<>();
-		Student3 st1 = new Student3("Anna", "Ivanova", 3);
-		Student3 st2 = new Student3("Mariya", "Petrova", 1);
-		Student3 st3 = new Student3("Sergey", "Tregulov", 4);
+		Map<Student4, Double> map = new HashMap<>();
+		Student4 st1 = new Student4("Anna", "Ivanova", 3);
+		Student4 st2 = new Student4("Mariya", "Petrova", 1);
+		Student4 st3 = new Student4("Sergey", "Tregulov", 4);
 		map.put(st1, 7.5);
 		map.put(st2, 8.7);
 		map.put(st3, 9.1);
@@ -36,12 +36,12 @@ public class HashCodeExp1 {
 	}
 }
 
-final class  Student3 {
+final class Student4 {
 	final String name;
 	final String surname;
 	final int course;
 
-	public Student3(String name, String surname, int course) {
+	public Student4(String name, String surname, int course) {
 		this.name = name;
 		this.surname = surname;
 		this.course = course;
@@ -49,7 +49,7 @@ final class  Student3 {
 
 	@Override
 	public String toString() {
-		return "Student3{" +
+		return "Student4{" +
 				"name='" + name + '\'' +
 				", surname='" + surname + '\'' +
 				", course=" + course +
@@ -60,8 +60,8 @@ final class  Student3 {
 	public boolean equals(Object o) {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
-		Student3 student3 = (Student3) o;
-		return course == student3.course && Objects.equals(name, student3.name) && Objects.equals(surname, student3.surname);
+		Student4 student4 = (Student4) o;
+		return course == student4.course && Objects.equals(name, student4.name) && Objects.equals(surname, student4.surname);
 	}
 
 	@Override

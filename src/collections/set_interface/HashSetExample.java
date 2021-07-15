@@ -1,4 +1,4 @@
-package collections;
+package collections.set_interface;
 
 import java.util.Collection;
 import java.util.HashSet;

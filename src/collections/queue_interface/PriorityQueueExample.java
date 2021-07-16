@@ -21,5 +21,4 @@ public class PriorityQueueExample {
 		System.out.println(priorityQueue.remove());
 		System.out.println(priorityQueue.remove());
 	}
-
 }

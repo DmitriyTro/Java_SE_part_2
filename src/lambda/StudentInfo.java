@@ -3,6 +3,8 @@ package lambda;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class StudentInfo {
@@ -88,6 +90,18 @@ class Test {
 //		info.printStudentsUnderAge(students, 25);
 //		System.out.println("-------------------------------");
 //		info.printStudentsMixCondition(students, 20, 9.5, 'f');
+
+		double res = avgOfSmth(students, student -> student.avgGrade);
+		System.out.println(res);
+	}
+
+	private static double avgOfSmth(List<Student> list, Function<Student, Double> f) {
+		double result = 0;
+		for (Student st : list) {
+			result += f.apply(st);
+		}
+		result = result / list.size();
+		return result;
 	}
 }
 

@@ -1,24 +1,38 @@
 package lambda;
 
 import java.util.ArrayList;
+import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 public class Test3 {
 
-	public static ArrayList<Car> createThreeCars(Supplier<Car> supplier) {
+	public static ArrayList<Car> createThreeCars(Supplier<Car> carSupplier) {
 		ArrayList<Car> aL = new ArrayList<>();
 		for (int i = 0; i < 3; i++) {
-			aL.add(supplier.get());
+			aL.add(carSupplier.get());
 		}
 		return aL;
+	}
+
+	public static void changeCar(Car car, Consumer<Car> carConsumer) {
+		carConsumer.accept(car);
 	}
 
 	public static void main(String[] args) {
 		ArrayList<Car> ourCars = createThreeCars(() ->
 				new Car("Nissan Tiida", "Silver Metalic", 1.6));
 		System.out.println("Our cars: " + ourCars);
+
+		changeCar(ourCars.get(0),
+				car -> {
+					car.color = "red";
+					car.engine = 2.4;
+					System.out.println("Upgraded car: " + car);
+				});
+		System.out.println("Our cars: " + ourCars);
 	}
 }
+
 
 class Car {
 	String model;

@@ -2,6 +2,7 @@ package streams;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -19,19 +20,27 @@ public class Test2 {
 		students.add(st4);
 		students.add(st5);
 
-		students = students.stream().sorted((x, y) ->
-				x.getName().compareTo(y.getName())).collect(Collectors.toList());
-		System.out.println(students);
+		students.stream().map(element ->
+		{
+			element.setName(element.getName().toUpperCase());
+			return element;
+		}).filter(element -> element.getSex() == 'f')
+				.sorted((x, y) -> x.getAge() - y.getAge())
+				.forEach(System.out::println);
+
+//		students = students.stream().sorted((x, y) ->
+//				x.getName().compareTo(y.getName())).collect(Collectors.toList());
+//		System.out.println(students);
 
 //		students = students.stream().filter(element
 //		-> element.getAge() > 22 && element.getAvgGrade() < 7.2)
 //		.collect(Collectors.toList());
 //		System.out.println(students);
 
-		Stream<Student> myStream = Stream.of(st1, st2, st3, st4, st5);
-		myStream.filter(element
-				-> element.getAge() > 22 && element.getAvgGrade() < 7.2)
-				.collect(Collectors.toList());
+//		Stream<Student> myStream = Stream.of(st1, st2, st3, st4, st5);
+//		myStream.filter(element
+//				-> element.getAge() > 22 && element.getAvgGrade() < 7.2)
+//				.collect(Collectors.toList());
 	}
 }
 

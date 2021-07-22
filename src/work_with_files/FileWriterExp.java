@@ -11,9 +11,9 @@ public class FileWriterExp {
 				"Вот последняя правда, открытая мной.\n";
 		String s = "Hello";
 
-		FileWriter writer = null;
-		try {
-			writer = new FileWriter("C:\\Users\\Дмитрий\\Desktop\\text1.txt", true);
+//		FileWriter writer = null;
+		try (FileWriter writer = new FileWriter("C:\\Users\\Дмитрий\\Desktop\\text1.txt", true)) {
+//			writer = new FileWriter("C:\\Users\\Дмитрий\\Desktop\\text1.txt", true);
 //			for (int i = 0; i < rubai.length(); i++) {
 //				writer.write(rubai.charAt(i));
 //			}
@@ -22,8 +22,8 @@ public class FileWriterExp {
 			System.out.println("Done!");
 		} catch (IOException e) {
 			e.printStackTrace();
-		} finally {
-			writer.close();
+//		} finally {
+//			writer.close();
 		}
 	}
 }

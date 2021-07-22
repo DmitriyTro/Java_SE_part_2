@@ -5,9 +5,9 @@ import java.io.IOException;
 
 public class FileReaderExp {
 	public static void main(String[] args) throws IOException {
-		FileReader reader = null;
-		try {
-			reader = new FileReader("C:\\Users\\Дмитрий\\Desktop\\text1.txt");
+//		FileReader reader = null;
+		try (FileReader reader = new FileReader("C:\\Users\\Дмитрий\\Desktop\\text1.txt")) {
+//			reader = new FileReader("C:\\Users\\Дмитрий\\Desktop\\text1.txt");
 			int character;
 			while ((character = reader.read()) != -1) {
 				System.out.print((char) character);
@@ -16,8 +16,8 @@ public class FileReaderExp {
 			System.out.println("Done!");
 		} catch (IOException e) {
 			e.printStackTrace();
-		} finally {
-			reader.close();
+//		} finally {
+//			reader.close();
 		}
 	}
 }

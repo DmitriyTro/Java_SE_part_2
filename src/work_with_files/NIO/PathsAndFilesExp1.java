@@ -7,7 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
 
-public class PathAndFilesExp1 {
+public class PathsAndFilesExp1 {
 	public static void main(String[] args) throws IOException {
 		Path filePath = Paths.get("test15.txt");
 		Path directoryPath = Paths.get("C:\\Users\\Дмитрий\\Desktop\\M");
